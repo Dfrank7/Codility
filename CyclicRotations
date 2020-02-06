@@ -1,0 +1,23 @@
+private static int[] cyclicRotation(int[] A, int K){
+
+        int[] temp = new int[A.length];
+        int j = 0;
+
+        while (K>=A.length){
+            K = K-A.length;
+        }
+
+        for (int i = 0; i < A.length; i++){
+
+            if (A.length-K+i>=A.length){
+                temp[i] = A[j];
+                j++;
+            }else {
+                temp[i] = A[A.length-K+i];
+            }
+
+        }
+        return temp;
+
+    }
+

@@ -1,0 +1,26 @@
+private static boolean checkInteger(int[] a){
+        if (a.length == 1){
+            return true;
+        }
+
+        if (a.length%2 == 1 && a.length< 1000000){
+            return true;
+        }
+        return false;
+    }
+
+    private static int oddOccurence(int[] a){
+        int len = a.length;
+        for (int i =0; i <len; i++){
+            int answer = 0;
+            for (int j = 0; j<len; j++){
+                if (a[i]==a[j]){
+                    answer++;
+                }
+            }
+            if (answer%2!=0)
+                return a[i];
+        }
+        return -1;
+    }
+

@@ -1,0 +1,28 @@
+public class BinaryGap {
+    public static boolean checkInteger(int n){
+        if (n>1 && n < 2147483647){
+            return true;
+        }
+        return false;
+    }
+
+    public static int solution(int N){
+        return d2b(N, 0,0,0);
+    }
+
+    public static int d2b(int n, int max, int counter, int index){
+        if (n == 0){
+            return max;
+        }
+        if (n%2==0 && index == 0) {
+            index = 0;
+        }else if(n%2 == 0){
+            counter++;
+        }else {
+            index++;
+            max = Math.max(max, counter);
+            counter = 0;
+        }
+        n = n/2;
+        return d2b(n, max, counter, index);
+    }
