@@ -1,0 +1,24 @@
+
+class Solution{
+
+private static int frogjmp(int x, int y, int d) {
+
+        if (checkNumbers(x) && checkNumbers(y) && checkNumbers(d)) {
+           int distance = y-x;
+           if (distance%d == 0){
+               return distance/d;
+           }else {
+               return distance/d+1;
+           }
+        }
+        return 0;
+    }
+
+public static boolean checkNumbers(int n){
+        if (n>=1 && n <= 1000000000){
+            return true;
+        }
+        return false;
+    }
+
+}
